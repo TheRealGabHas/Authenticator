@@ -1,0 +1,4 @@
+database:
+  link: "The connection url to the database"
+  username: "The database username here"
+  password: "The database password here"

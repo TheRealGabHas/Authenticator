@@ -1,0 +1,11 @@
+name: Authenticator
+version: '${version}'
+main: fr.gabhas.authenticator.Authenticator
+api-version: '1.20'
+authors: [GabHas]
+description: A plugin to help link a Minecraft account to a third-party application.
+website: https://gabhas.fr/
+
+commands:
+  verify:
+    description: 'Generate a verification ticket (8-digits code)'
