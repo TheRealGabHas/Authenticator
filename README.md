@@ -37,6 +37,7 @@ create table tickets
 )
     engine = InnoDB;
 ```
+- Database user credentials and link in the `src/main/java/ressources/config.yml`.
 
 ## Behavior
 
