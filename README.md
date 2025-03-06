@@ -5,7 +5,7 @@
 A Minecraft plugin to help you set up a Minecraft verification process for a third-party application.
 When player issues the command `/verify` on a Minecraft server (1.20.4) an 8-digits code is generated.
 
-The following data (a Ticket) are then inserted into a MySQL database :
+The following data (a Ticket) are then inserted into a SQL database :
 - `datetime` (DATETIME) : The date the command was issued at
 - `uuid` (VARCHAR(36)) : The player's UUID
 - `code` (INT) : The 8-digits code
@@ -37,18 +37,20 @@ create table tickets
 )
     engine = InnoDB;
 ```
-- Database user credentials and link in the `src/main/java/ressources/config.yml`.
+- Database user credentials and link in the [`src/main/java/ressources/config.yml`](src/main/resources/config.yml).
 
 ## Behavior
 
 - The `/verify` command has a default cooldown of 5 minutes
 - There can't be 2 Tickets with the same code in the database
-- Database entry that are older than 10 minutes are automatically deleted (TODO)
-- All issued tickets are logged in the `tickets.txt` file (TODO)
+
+> **Warning:** Since there is no system for deleting tickets, the database may be filled with 10 millions tickets. 
+> In that scenario the plugin will no longer work.
 
 ## TODO
 
 - [ ] Auto deleting old ticket after a certain amount of time (10 minutes)
 - [ ] Log every issued tickets in a separated file
 - [x] Regenerate the code if it's already found in the database
+- [ ] Create a Docker Compose file to handle every service of this project (Minecraft Server, configured SQL database).
 
