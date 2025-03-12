@@ -44,7 +44,7 @@ create table tickets
 - The `/verify` command has a default cooldown of 5 minutes
 - There can't be 2 Tickets with the same code in the database
 
-> **Warning:** Since there is no system for deleting tickets, the database may be filled with 10 millions tickets. 
+> **Warning:** Since there is no system for deleting tickets, the database may be filled with 80 millions tickets. 
 > In that scenario the plugin will no longer work.
 
 ## TODO
